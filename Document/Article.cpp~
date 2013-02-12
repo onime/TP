@@ -1,0 +1,13 @@
+#include "Article.hpp"
+
+void Livre::afficherDocument()
+{
+
+}
+
+
+Article Article::clone()
+{
+
+
+}
