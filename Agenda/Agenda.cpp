@@ -36,3 +36,22 @@ void Agenda::afficher()
 {
   tab.afficherTableau();
 }
+
+Tableau Agenda::get_tab()
+{
+    return tab;
+}
+
+Agenda Agenda::concat(Agenda a1)
+{
+    Agenda c = Agenda(a1.get_tab().get_taille() + tab.get_taille());
+
+    for(int i=0;i<=tab.get_nb_elem();i++)
+	c.ajouterNom(tab.get_nom(i),tab.get_num(i));
+	
+    for(int i=0;i<a1.get_tab().get_nb_elem();i++)
+	c.ajouterNom(a1.get_tab().get_nom(i),a1.get_tab().get_num(i));
+
+    
+    return c;
+}

@@ -1,3 +1,6 @@
+#ifndef ENTRE_H
+#define ENTRE_H
+
 #include <iostream>
 #include <string>
 
@@ -14,3 +17,5 @@ class Entree{
   string getNom();
   string getNum();
 };
+
+#endif
