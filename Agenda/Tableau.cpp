@@ -109,3 +109,14 @@ string Tableau::get_num(int i)
 {
     return entrees[i].getNum();
 }
+
+Tableau Tableau::operator+=(Entree const &e)
+{
+    if(nb_element <= taille_tableau)
+    {
+	entrees[nb_element+1] = e;
+	nb_element++;
+    }
+
+    return *this;
+}

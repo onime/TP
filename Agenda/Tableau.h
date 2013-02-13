@@ -28,7 +28,8 @@ public:
     void supprimerNom(string nom);
     string get_nom(int i);
     string get_num(int i);
-  
+    
+    
 };
 
 #endif

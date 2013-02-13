@@ -20,7 +20,10 @@ class Agenda
   void supprimer(string nom);
   void afficher();
   
-  // std::ostream& operator<< (std::ostream& stream, Agenda &a);
-//  Agenda operator+(Agenda const &a1,Agenda const &a2);
+  Agenda operator=(Agenda const & a);
+  friend ostream& operator<< (ostream& stream,Agenda const &a);
+  Agenda operator += (Agenda  a1);
+  Agenda operator+(Agenda a1);
+  //Agenda operator+(Agenda const &a1,Agenda const &a2);
 };
 

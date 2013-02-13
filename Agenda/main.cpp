@@ -27,7 +27,9 @@ int main()
   monSuperAgendaDeSaRace.ajouterNom("15","hgdhdhfdhdf");
 
   monSuperAgendaDeSaRace.supprimer("15");
-    
-  Agenda a3 =  a2.concat(monSuperAgendaDeSaRace);
-  a3.afficher();
+  Agenda a3 = Agenda(44);
+  
+  a2 +=  monSuperAgendaDeSaRace;
+  a3 = a2;
+  std::cout << a3;
 }

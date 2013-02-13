@@ -14,7 +14,7 @@ Agenda::Agenda(const Agenda & a)
 
 void Agenda::ajouterNom(string nom,string num)
 {
-  tab.ajouterNom(nom,num);
+    tab+=Entree(nom,num);
 }
 
 void Agenda::ajouterNom(string nom)
@@ -54,4 +54,34 @@ Agenda Agenda::concat(Agenda a1)
 
     
     return c;
+}
+
+Agenda Agenda::operator+(Agenda a1)
+{
+    Agenda a3 = a1.concat(*this);
+
+    return a3;
+}
+
+Agenda Agenda::operator += (Agenda  a1)
+  {
+      *this = a1.concat(*this);
+      // return this;
+  }
+
+ostream& operator<< (ostream& stream,Agenda const &a)
+{
+    Agenda copy = a;
+    Tableau t = copy.get_tab();
+    for(int i=0;i<t.get_nb_elem();i++)
+	stream << t.get_nom(i) << " : " <<t.get_num(i) <<endl;	
+    return stream;
+}
+
+
+Agenda Agenda::operator=(Agenda const &a)
+{
+    Agenda tmp = Agenda(a);
+    tab = tmp .get_tab();
+    return *this;
 }
