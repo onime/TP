@@ -8,8 +8,14 @@ void Livre::afficherDocument()
     Document::afficherDocument();    
 }
 
-Livre Livre::clone()
+Livre* Livre::clone()
 {
 
-    return Livre(titre,auteur,resume,editeur,annee);
+    return new Livre(titre,auteur,resume,editeur,annee);
+}
+
+void Livre::coutDoc()
+{
+    cout << "Big Fuck";
+
 }

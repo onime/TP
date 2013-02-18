@@ -22,7 +22,19 @@ void Document::afficherDocument()
   
 }
 
-Document Document::clone()
+Document* Document::clone()
 {
-  return Document(titre,auteur,resume);
+    return this;
+//new Document(titre,auteur,resume);
+}
+
+string Document::get_titre()
+{
+
+    return titre;
+}
+
+void Document::coutDoc()
+{
+
 }

@@ -8,25 +8,27 @@ using namespace std;
 
 class Livre: public Document 
 {
- protected:
-  string editeur;
-  int annee;
+protected:
+    string editeur;
+    int annee;
   
- public:
-  Livre(string & titre,string auteur, string *resume,string editeur, int annee):Document(titre,auteur,resume)
+public:
+    Livre(string & titre,string auteur, string *resume,string editeur, int annee):Document(titre,auteur,resume)
     {  
-      this->editeur = editeur;
-      this->annee = annee;
+	this->editeur = editeur;
+	this->annee = annee;
     }
     
-  Livre(const Livre & l):Document(l.titre,l.auteur,l.resume)
+    Livre(const Livre & l):Document(l.titre,l.auteur,l.resume)
     {
-      editeur = l.editeur;
-      annee = l.annee;
+	editeur = l.editeur;
+	annee = l.annee;
     }
-
-  void afficherDocument();
-  Livre clone();
+    
+    virtual void coutDoc();
+    
+    void afficherDocument();
+    Livre* clone();
 
 };
 

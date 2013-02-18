@@ -18,9 +18,10 @@ class Document
   Document(string & p_titre,string p_auteur,string * p_resume);
   Document(const Document & d);
   
-  Document clone();
+  string get_titre();
+  Document* clone();
   void afficherDocument();
-
+  virtual void coutDoc() = 0;
 };
 
 #endif
