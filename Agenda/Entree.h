@@ -16,6 +16,7 @@ class Entree{
   void afficheEntree();
   string getNom();
   string getNum();
+  
 };
 
 #endif

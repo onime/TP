@@ -13,17 +13,23 @@ class Agenda
   
   Agenda concat(Agenda a1);
 
-  Tableau get_tab();
   void ajouterNom(string nom, string num);
   void ajouterNom(string nom);
   void supprimer(string nom,string num);
   void supprimer(string nom);
   void afficher();
-  
+  bool est_egal(const Agenda & a1)const ;
+     
+  Agenda & operator-=(const string &nom);  
+  Entree operator[](const string & nom) ; 
   Agenda operator=(Agenda const & a);
   friend ostream& operator<< (ostream& stream,Agenda const &a);
-  Agenda operator += (Agenda  a1);
-  Agenda operator+(Agenda a1);
-  //Agenda operator+(Agenda const &a1,Agenda const &a2);
+  Agenda& operator += (const Agenda & a1);
+  Agenda operator+(const Agenda & a1);
+  void operator()(const char & letter) const;
+
 };
 
+
+bool operator==(const Agenda & a1,const Agenda &a2);
+bool operator/(const string & nom ,const Agenda & a1);

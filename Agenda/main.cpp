@@ -1,6 +1,8 @@
 #include "Agenda.h"
 #include <sstream>
 
+using namespace std;
+
 int main()
 {
   
@@ -23,13 +25,30 @@ int main()
       a2.ajouterNom(nom);
       
     }
-   
-  monSuperAgendaDeSaRace.ajouterNom("15","hgdhdhfdhdf");
+   a2.ajouterNom("20"); 
+   monSuperAgendaDeSaRace.ajouterNom("15","hgdhdhfdhdf");
+    
+  Agenda a3 = monSuperAgendaDeSaRace + a2;
+  Agenda copy(a3);
 
-  monSuperAgendaDeSaRace.supprimer("15");
-  Agenda a3 = Agenda(44);
+  /* if (a3 == copy)
+      cout << "EGAL";
+  else
+      cout << "PAS EGAL";
   
-  a2 +=  monSuperAgendaDeSaRace;
-  a3 = a2;
-  std::cout << a3;
+  a3 -= "20";
+
+   cout << a3;
+  */
+
+/*  if("20"/a3)
+      a3["20"].afficheEntree();
+  else
+      cout << "QUE DALLLE";
+*/
+  a3('2');
+
+
+  
+  
 }

@@ -29,6 +29,7 @@ public:
     string get_nom(int i);
     string get_num(int i);
     
+    Tableau& operator+=(const Entree & e);
     
 };
 

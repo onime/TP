@@ -36,6 +36,7 @@ void Tableau::afficherTableau()
 
 void Tableau::ajouterNom(string nom)
 {
+   
     Entree e = Entree(nom,"00.00.00.00.00");
     if(nb_element <= taille_tableau)
     {
@@ -46,6 +47,7 @@ void Tableau::ajouterNom(string nom)
 
 void Tableau::ajouterNom(string nom,string num)
 {
+
     if(nb_element <= taille_tableau)
     {
 	entrees[nb_element+1] = Entree(nom,num);
@@ -110,13 +112,16 @@ string Tableau::get_num(int i)
     return entrees[i].getNum();
 }
 
-Tableau Tableau::operator+=(Entree const &e)
+Tableau& Tableau::operator+=(const Entree  &e)
 {
+    Entree copy(e);
+
     if(nb_element <= taille_tableau)
     {
-	entrees[nb_element+1] = e;
+	entrees[nb_element+1] = copy;
 	nb_element++;
     }
 
     return *this;
 }
+

@@ -10,6 +10,8 @@ Entree::Entree(string p_nom,string p_num)
 
 Entree::Entree()
 {
+    nom = "";
+    num = "";
 }
 void Entree::afficheEntree()
 {
@@ -25,3 +27,5 @@ string Entree::getNum()
 {
   return num;
 }
+
+
